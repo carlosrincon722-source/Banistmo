@@ -24,7 +24,7 @@ public class SelectReportTask  implements Task {
     }
 
 
-    public static SelectReportTask SelectReportTask(String nameReport){
+    public static SelectReportTask selectreporttask(String nameReport){
         return Tasks.instrumented(SelectReportTask.class,nameReport);
     }
 }

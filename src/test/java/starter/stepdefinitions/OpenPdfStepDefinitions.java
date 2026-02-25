@@ -8,9 +8,13 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import starter.navigation.OpenBancolombiaPersona;
 import starter.questions.pdfview.IsCurrentPage;
 import starter.tasks.capitaIinteligente.*;
-import starter.tasks.coporativos.GoToCorporativo;
+import starter.tasks.corporativos.GoToCorporativo;
+import starter.util.SwitchToNewTab;
 
-public class OpenPdfStepdsDefinitions {
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.is;
+
+public class OpenPdfStepDefinitions {
 
     @Given("the actor opens the Bancolombia portal in the Personas section")
     public void the_actor_opens_the_bancolombia_portal_in_the_personas_section() {
@@ -40,7 +44,7 @@ public class OpenPdfStepdsDefinitions {
 
     @And("selects the report {string}")
     public void selectsTheReport(String nameReport) {
-        OnStage.theActorCalled("actor").attemptsTo(SelectReportTask.SelectReportTask(nameReport));
+        OnStage.theActorCalled("actor").attemptsTo(SelectReportTask.selectreporttask(nameReport));
 
     }
 
@@ -52,6 +56,7 @@ public class OpenPdfStepdsDefinitions {
     @Then("the system should generate the download of a PDF file")
     public void theSystemShouldGenerateTheDownloadOfAPDFFile() {
         String saveUrl=OnStage.theActorCalled("actor").recall("urlReport");
-        OnStage.theActorCalled("actor").asksFor(IsCurrentPage.equalTo(saveUrl)).equals(true);
+        OnStage.theActorCalled("actor").attemptsTo( SwitchToNewTab.now());
+        OnStage.theActorCalled("actor").should(seeThat(IsCurrentPage.equalTo(saveUrl),is(true)));
     }
 }
