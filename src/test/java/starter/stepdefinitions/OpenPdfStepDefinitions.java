@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import starter.navigation.OpenBancolombiaPersona;
 import starter.questions.pdfview.IsCurrentPage;
-import starter.tasks.capitaIinteligente.*;
+import starter.tasks.capitalinteligente.*;
 import starter.tasks.corporativos.GoToCorporativo;
 import starter.util.SwitchToNewTab;
 

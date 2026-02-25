@@ -1,14 +1,10 @@
-package starter.tasks.capitaIinteligente;
+package starter.tasks.capitalinteligente;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import starter.ui.actividadEconomicaUi.CapitalInteligenteUi;
-import starter.util.SwitchToNewTab;
-
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class DownloadReportTask implements Task {
 

@@ -1,4 +1,4 @@
-package starter.tasks.capitaIinteligente;
+package starter.tasks.capitalinteligente;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
